@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rm -rf dist & cd ../scribbles && npm run build && cp -r dist ../scribbles-backend && cd ../scribbles-backend",
+    "deploy:all": "npm run build:ui && git add . && git commit -m 'build ui' && git push origin main",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
